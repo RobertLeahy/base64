@@ -17,7 +17,7 @@ class Base64 {
 
     out->resize(EncodedLength(in));
 
-    int input_len = in.size();
+    std::string::size_type input_len = in.size();
     std::string::const_iterator input = in.begin();
 
     while (input_len--) {
@@ -100,7 +100,7 @@ class Base64 {
     unsigned char a3[3];
     unsigned char a4[4];
 
-    int input_len = in.size();
+    std::string::size_type input_len = in.size();
     std::string::const_iterator input = in.begin();
 
     out->resize(DecodedLength(in));
