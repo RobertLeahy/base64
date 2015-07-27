@@ -60,7 +60,7 @@ class Base64 {
 
     size_t encoded_length = EncodedLength(input_length);
 
-    if (out_length < encoded_length) return false;
+    if (static_cast<unsigned>(out_length) < encoded_length) return false;
 
     while (input_length--) {
       a3[i++] = *input++;
@@ -153,7 +153,7 @@ class Base64 {
 
     size_t decoded_length = DecodedLength(input, input_length);
 
-    if (out_length < decoded_length) return false;
+    if (static_cast<unsigned>(out_length) < decoded_length) return false;
 
     while (input_length--) {
       if (*input == '=') {
